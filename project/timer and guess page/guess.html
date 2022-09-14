@@ -1,0 +1,121 @@
+
+ 
+
+     
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+    <title>Draw Chat</title>
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body onload="load_drawing()">
+
+    <style>
+    body {
+      background-color:#FBCBC9;
+      width:50%; /* conditional based on screen size? */
+      margin: auto;
+      font-family: 'Pacifico';
+      font-size: 50px;
+      color: #52a4a7;
+      /*background-image: url("../resources/imgs/background.png");
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat; */
+    }
+    </style>
+
+    <div class="container" style="text-align:right" id="app"></div> 
+
+
+    <div class="container" style="text-align:left" id="score_spot"> Currentcore: </div>
+
+    <div class="container" margin-left="auto" margin-right="auto">
+      <br />
+          <div class="card">
+            <img
+              class="card-img-top"
+              id="drawing"
+              src=""
+              alt="Placeholder for Drawing"
+            />
+          </div>
+    </div>
+
+    <script>
+    var guesses = [];
+    var ans = "dog"; //make this sql call
+    </script>
+
+
+    <div>
+			<a id="correct_link" class="invis_link" href="correct.html"></a>
+    </div>
+
+    <div class="container">
+      <form class="form-signin" onsubmit="check_guess(guesses,ans)" id="myForm">
+        <script>
+        var form = document.getElementById("myForm");
+        function handleForm(event) { event.preventDefault(); }
+        form.addEventListener('submit', handleForm);
+        </script>
+        <label for="guess" class="sr-only">Guess</label>
+        <input
+          type="text"
+          id="guess"
+          class="form-control"
+          placeholder="Guess"
+          required
+          autofocus
+        />
+      </form>
+    </div>
+
+    <br />
+    <center>
+      <h3 style="font-family: 'Bevan'; color: #731b2a">Guesses</h3>
+    </center>
+    <center>
+      <div class="container" margin-left="auto" margin-right="auto">
+        <h5 id="guesses_list" style="font-family: 'Bevan'" /h5>
+      </div>
+    </center>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts.js"></script>
+    <script src="App.js"></script>
+    <link rel="stylesheet" href="scripts.css"></link>
+
+  </body>
+</html>
