@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+    <title>Draw Chat</title>
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body onload="check_thresh()">
+
+    <style>
+    body {
+      background-color:#FBCBC9;
+      width:50%; /* conditional based on screen size? */
+      margin: auto;
+      font-family: 'Bevan';
+      font-size: 50px;
+      color: #52a4a7;
+      /*background-image: url("../resources/imgs/background.png");
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat; */
+    }
+    </style>
+
+    <script>
+      var data = 0;
+    </script>
+
+    <br />
+
+    <div class="col-md-4">
+        <p></p>
+        <form method="get" action="/restart">
+          <input type="hidden" name="GameCode" value="<%= gameCode %>" >
+          <input type="hidden" name="userid" value="<%= userId %>" >
+          <button class="button-start" role="button" style="font-family: 'Bevan';">Start Next Game</a></button>
+       </form>
+        <p></p>
+    </div>
+
+    <div class="col-md-4">
+        <p></p>
+        <form method="get" action="/end_games">
+          <input type="hidden" name="GameCode" value="<%= gameCode %>" >
+          <input type="hidden" name="userid" value="<%= userId %>" >
+          <button id="end_games" class="button-start" role="button" style="font-family: 'Bevan';">End Games</a></button>
+       </form>
+        <p></p>
+    </div>
+
+    <div class="col-md-4">
+        <p></p>
+        <form method="get" action="/max_user_score">
+          <input type="hidden" name="GameCode" value="<%= gameCode %>" >
+          <input type="hidden" name="userid" value="<%= userId %>" >
+          <button id="check_scores" class="button-start" role="button" style="font-family: 'Bevan';">End Games</a></button>
+       </form>
+        <p></p>
+    </div>
+
+    <form action="/game_over/scores" method="get">
+      <script>
+        if (data) {
+          var msgs = '';
+          data.forEach(function(item){
+               msgs += '<h3>' + item.UserName + '   ' + item.UserScore + '</h3>';
+          });
+          msgs
+        }
+        </script>
+    </form>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../resources/js/myJS.js"></script>
+    <link rel="stylesheet" href="../resources/css/scripts.css"></link>
+
+  </body>
+</html>

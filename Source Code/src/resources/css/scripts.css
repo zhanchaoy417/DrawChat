@@ -1,0 +1,79 @@
+.invis_link{
+  visibility: hidden;
+}
+
+
+
+/* timer style*/
+body {
+  font-family: "Times New Roman", Times, serif;
+  display: grid;
+  height: 70vh;
+  place-items: right ;
+}
+
+
+/* range size*/
+.base-timer {
+  position: absolute;
+  width: 100px;/*300*/
+  height: 100px;/*300*/
+  right:400px /* the timer is place in the right*/
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+/* timer shape*/
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+/* remain path
+color tend to be grey
+*/
+
+.base-timer__path-elapsed {
+  stroke-width: 5px;
+  stroke: rgb(126, 122, 122);
+}
+
+/* origianl path*/
+.base-timer__path-remaining {
+  stroke-width: 5px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 0.8s linear all; /*orginal is 1s*/
+  fill-rule: nonzero;
+  stroke: currentColor; /*match the color*/
+}
+
+/*there are 3 color when the timer count down
+green,orange and red */
+.base-timer__path-remaining.green {
+  color: rgb(81, 206, 150);
+}
+
+.base-timer__path-remaining.orange {
+  color: rgb(236, 156, 8);
+}
+
+.base-timer__path-remaining.red {
+  color: rgb(187, 20, 20);
+}
+
+/*  character in the timer*/
+.timer_character {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;  /* have to be 0*/
+  display: flex;
+  align-items: center; /*put character  in the center*/
+  justify-content: center;  /*put character  in the center*/
+  font-size: 28px;
+  font-style: italic;
+}
